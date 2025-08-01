@@ -24,11 +24,3 @@ main {
     color: var(--text-color);
 
 }
-.flex{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-li a{
-    cursor: pointer !important;
-}
