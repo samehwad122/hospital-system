@@ -16,7 +16,7 @@
     --dark-color:#000;
 }
 main {
-    height: 100vh;
+    min-height: 100vh;
       font-family: "Roboto", sans-serif;
       overflow-x: hidden ;
     background-color: var(--body-color);
