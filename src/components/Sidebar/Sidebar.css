@@ -1,0 +1,8 @@
+.ps-menuitem-root *{
+
+  transition: 0.5s;
+}
+
+ .ps-menuitem-root:hover * {
+  color: var(--main-color);
+} 

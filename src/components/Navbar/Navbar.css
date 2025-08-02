@@ -1,0 +1,89 @@
+/* styles.css */
+
+input::placeholder {
+  font-style: italic;
+}
+
+.Navbar {
+  top: 0;
+  backdrop-filter: blur(6px);
+  padding: 10px 20px;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 100%;
+  height: 40px;
+  padding-left: 50px;
+  padding-right: 20px;
+  border-radius: 999px;
+  background-color: var(--background-color);
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid var(--text-color);
+}
+
+.searchInput::placeholder {
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.searchIcon:hover {
+  color: var(--main-color);
+}
+
+.mobileSearchBox {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform:translateX(-50% );
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 6px 12px;
+  z-index: 10;
+  margin-top: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.iconsNav{
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:  0.3s;
+}
+.iconsNav:hover{
+  background-color: var(--main-color);
+  color: var(--light-color);  
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .containSearch {
+    position: relative;
+    width: 250px;
+  }
+}
