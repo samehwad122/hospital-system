@@ -1,9 +1,10 @@
 import React from 'react'
+import Cases from '../../pages/Cases'
 
 function Home() {
   return (
     <div className='Home'>
-      <h1>Welcome component Home</h1>
+      <Cases />
     </div>
   )
 }
