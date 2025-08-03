@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { IoAddSharp, IoEyeSharp } from "react-icons/io5";
 import { supabase } from "../supabase/client";
 
+
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
