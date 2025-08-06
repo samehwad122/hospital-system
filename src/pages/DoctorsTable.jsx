@@ -1,7 +1,7 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { IoAddSharp, IoEyeSharp } from "react-icons/io5";
-// import { supabase } from "../supabase/client";
+import supabase from "../Supabase/supabase_config";
 
 
 const Doctors = () => {

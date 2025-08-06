@@ -93,6 +93,7 @@ const CustomSidebar = () => {
           <div className="space-y-1 mb-3 pb-3 border-b border-[var(--background-color)] border-opacity-20">
             <SubMenu label="Emergency" icon={<FaAmbulance />}>
               <MenuItem onClick={() => navigate('/doctors')}>Doctors</MenuItem>
+              <MenuItem onClick={() => navigate('/patients')}>Patients</MenuItem>
               <MenuItem onClick={() => navigate('/cases')}>Cases</MenuItem>
               <MenuItem onClick={() => navigate('/beds')}>Beds</MenuItem>
               <MenuItem onClick={() => navigate('/nurses')}>Nurses</MenuItem>
