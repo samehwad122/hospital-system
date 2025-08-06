@@ -6,6 +6,7 @@ import Cases from './pages/Cases'
 import NursesTable from './pages/NursesTable'
 import BedsTable from './pages/BedsTable'
 import Doctors from './pages/DoctorsTable'
+import Patients from './pages/Patients';
 function App() {
 const router = createBrowserRouter([{
 path:'',
@@ -17,6 +18,7 @@ children:[
   {path:'/nurses', element:<NursesTable/>},
   {path:'/beds', element:<BedsTable/>},
   {path:'/doctors', element:<Doctors/>},
+  {path:'/patients', element:<Patients/>},
 ]
 
 }])

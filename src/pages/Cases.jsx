@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import supabase from "../Supabase/supabase_config";
 import { FaTrash, FaEdit, FaPlus } from 'react-icons/fa';
 import '../index.css';
 
