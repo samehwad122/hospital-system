@@ -1,6 +1,6 @@
 // src/pages/SignIn.jsx
 import { useForm } from 'react-hook-form';
-import { supabase } from './supabaseClient';
+import supabase from '../Supabase/supabase_config'; // ✅ بعد التعديل
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {

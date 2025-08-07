@@ -1,6 +1,6 @@
 // src/pages/SignUp.jsx
 import { useForm } from 'react-hook-form';
-import { supabase } from './supabaseClient';
+import supabase from '../Supabase/supabase_config'; // ✅ تعديل الاستيراد الصحيح
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
@@ -20,7 +20,9 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--background-color)] px-4">
       <div className="bg-[var(--light-color)] p-8 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center text-[var(--text-color)] mb-6">Create an Account</h2>
+        <h2 className="text-3xl font-bold text-center text-[var(--text-color)] mb-6">
+          Create an Account
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
             <input
@@ -29,7 +31,9 @@ const SignUp = () => {
               {...register('email', { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--main-color)]"
             />
-            {errors.email && <p className="text-sm text-[var(--danger-color)] mt-1">Email is required</p>}
+            {errors.email && (
+              <p className="text-sm text-[var(--danger-color)] mt-1">Email is required</p>
+            )}
           </div>
 
           <div>
@@ -39,13 +43,15 @@ const SignUp = () => {
               {...register('password', { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--main-color)]"
             />
-            {errors.password && <p className="text-sm text-[var(--danger-color)] mt-1">Password is required</p>}
+            {errors.password && (
+              <p className="text-sm text-[var(--danger-color)] mt-1">Password is required</p>
+            )}
           </div>
 
           <button
             type="submit"
             className="w-full py-2 bg-[var(--success-color)] text-white rounded-md font-semibold hover:opacity-90 transition"
-          >ّ
+          >
             Sign Up
           </button>
         </form>
