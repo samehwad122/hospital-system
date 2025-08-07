@@ -7,6 +7,7 @@ import BedsTable from './pages/BedsTable';
 import Doctors from './pages/DoctorsTable';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import ProtectedRoute from './components/ProtectedRoute'; // أضفنا ده
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   },
   {
     path: '',
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     errorElement: <div className="text-center">Page not found</div>,
     children: [
       { path: '', element: <Home /> },
