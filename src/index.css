@@ -1,21 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-:root{
-    --main-color:#1E90FF;
-    --background-color:#E9ECEF;
+/* Light mode (الوضع العادي) */
+:root {
+    --main-color: #1E90FF; /* أزرق طبي فاتح */
+    --background-color: #E9ECEF; /* رمادي فاتح */
     --text-color: #212529;
-    --success-color:#28A745;
-    --danger-color:#DC3545;
-    --warning-color:#FFC107; 
-    --info-color:#17A2B8; 
-    --light-color:#fff;
-    --dark-color:#000;
+    --success-color: #28A745;
+    --danger-color: #DC3545;
+    --warning-color: #FFC107; 
+    --info-color: #17A2B8; 
+    --light-color: #FFFFFF;
+    --dark-color: #000000;
 }
+
+/* Dark mode (الوضع الليلي الطبي) */
+.dark {
+    --main-color: #3FB7D3; /* فيروزي طبي */
+    --background-color: #1B2A32; /* رمادي مزرق مريح للعين */
+    --text-color: #E4F1F6; /* أبيض مزرق */
+    --success-color: #4FD17C; /* أخضر هادئ */
+    --danger-color: #F07167; /* أحمر باهت */
+    --warning-color: #F6C453; /* أصفر هادئ */
+    --info-color: #5BC0BE; /* تركواز ناعم */
+    --light-color: #243B46; /* رمادي مزرق أفتح قليلًا من الخلفية */
+    --dark-color: #0F1E24;
+}
+
+/* General styles */
 main {
     font-family: "Roboto", sans-serif;
-    overflow-x: hidden ;
+    overflow-x: hidden;
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
