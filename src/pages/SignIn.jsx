@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import supabase from '../Supabase/supabase_config';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
   const navigate = useNavigate();
