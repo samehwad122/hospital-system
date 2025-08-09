@@ -24,6 +24,7 @@ function Navbar() {
     handleSelect,
     searchRef,
     dropdownRef,
+    handleLogout
   } = useNavbarLogic();
 
   return (
@@ -31,10 +32,7 @@ function Navbar() {
                     bg-[var(--main-color)] text-[var(--text-color)] shadow-md 
                     transition-colors duration-300 z-50 relative">
 
-      {/* Search  */}
       <div className="flex items-center gap-3 w-full">
-        
-        {/* Mobile search  */}
         <div className="sm:hidden">
           <button
             onClick={() => setShowSearch(!showSearch)}
@@ -44,7 +42,6 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Mobile search input */}
         {showSearch && (
           <div className="sm:hidden absolute left-0 top-full w-full bg-[var(--light-color)] 
                           p-3 z-40 shadow">
@@ -77,7 +74,6 @@ function Navbar() {
           </div>
         )}
 
-        {/* Desktop search input */}
         <div className="hidden sm:block w-[250px] relative">
           <input
             type="text"
@@ -103,10 +99,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Icons Section */}
       <div className="flex items-center gap-4 relative">
-
-        {/* Theme toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="iconsNav text-2xl"
@@ -114,7 +107,6 @@ function Navbar() {
           {darkMode ? <FiSun /> : <FiMoon />}
         </button>
 
-        {/* Notifications */}
         <div className="relative">
           <button className="iconsNav text-2xl relative">
             <FiBell />
@@ -124,7 +116,6 @@ function Navbar() {
           </button>
         </div>
 
-        {/* User menu */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setShowDropdown(!showDropdown)}
@@ -139,7 +130,10 @@ function Navbar() {
                 <li className="px-4 py-2 cursor-pointer hover:bg-[var(--background-color)] hover:text-[var(--main-color)]">
                   Settings
                 </li>
-                <li className="px-4 py-2 cursor-pointer hover:bg-[var(--background-color)] hover:text-[var(--main-color)]">
+                <li
+                  onClick={handleLogout}
+                  className="px-4 py-2 cursor-pointer hover:bg-[var(--background-color)] hover:text-[var(--main-color)]"
+                >
                   Logout
                 </li>
               </ul>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import supabase from '../Supabase/supabase_config';
 
 export default function useNavbarLogic() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -23,13 +24,11 @@ export default function useNavbarLogic() {
     { name: 'Patients', path: '/patients' },
   ];
 
-  // Dark mode toggle
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -40,7 +39,6 @@ export default function useNavbarLogic() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Search filter
   useEffect(() => {
     if (query.trim() === '') {
       setSuggestions([]);
@@ -59,6 +57,11 @@ export default function useNavbarLogic() {
     setShowSearch(false);
   };
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate('/signin');
+  };
+
   return {
     darkMode,
     setDarkMode,
@@ -70,6 +73,7 @@ export default function useNavbarLogic() {
     setQuery,
     suggestions,
     handleSelect,
+    handleLogout,
     searchRef,
     dropdownRef,
   };
