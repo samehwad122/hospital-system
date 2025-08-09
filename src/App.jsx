@@ -12,8 +12,9 @@ import SignUp from './pages/SignUp';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppProviders from './providers/AppProviders';
 import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
-// تعريف الراوتر
+
 const router = createBrowserRouter([
   {
     path: '/signin',
@@ -50,13 +51,15 @@ const router = createBrowserRouter([
   },
 ]);
 
-// مكون التطبيق الرئيسي
 function App() {
   return (
     <AppProviders>
       <main>
       <ToastContainer />
       <RouterProvider router={router} />
+                <ToastContainer />
+
+        <RouterProvider router={router} />
       </main>
     </AppProviders>
   );
