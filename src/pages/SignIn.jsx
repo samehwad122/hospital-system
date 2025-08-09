@@ -15,14 +15,25 @@ const SignIn = () => {
   }, []);
 
   const onSubmit = async ({ email, password }) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
     if (error) {
-      alert(error.message);
+      toast(error.message);
     } else {
-      alert('Signed in successfully!');
-      navigate('/');
+      toast("Signed in successfully!");
+      if (data.session) {
+        const { access_token, refresh_token } = data.session;
+        // خزّنهم في localStorage
+        localStorage.setItem("access_token", access_token);
+        localStorage.setItem("refresh_token", refresh_token);
+      }
+
+      navigate("/");
     }
   };
+
 
   return (
     <div className="min-h-screen flex items-center  justify-center  px-4">
